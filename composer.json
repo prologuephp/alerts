@@ -1,6 +1,8 @@
 {
     "name": "prologue/alerts",
-    "description": "",
+    "description": "Prologue Alerts is a package that handles global site messages.",
+    "keywords": ["alerts", "messages", "laravel"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Dries Vints",

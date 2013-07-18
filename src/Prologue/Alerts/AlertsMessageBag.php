@@ -58,6 +58,16 @@ class AlertsMessageBag extends MessageBag {
 	}
 
 	/**
+	 * Returns the alert levels from the config.
+	 *
+	 * @return array
+	 */
+	protected function getLevels()
+	{
+		return $this->config->get('alerts::levels');
+	}
+
+	/**
 	 * Returns the session key from the config.
 	 *
 	 * @return string
@@ -85,6 +95,24 @@ class AlertsMessageBag extends MessageBag {
 	public function getConfig()
 	{
 		return $this->config;
+	}
+
+	/**
+	 * Dynamically handle alert additions.
+	 *
+	 * @param  string  $method
+	 * @param  array   $parameters
+	 * @return mixed
+	 */
+	public function __call($method, $parameters)
+	{
+		// Check if the method is in the allowed alert levels array.
+		if (in_array($method, $this->getLevels()))
+		{
+			return $this->add($method, $parameters[0]);
+		}
+
+		throw new \BadMethodCallException("Method [$method] does not exist.");
 	}
 
 }

@@ -1,4 +1,4 @@
-# Prologue Phpconsole
+# Prologue Alerts
 
 Prologue Alerts is a package that handles global site messages.
 
@@ -67,7 +67,7 @@ The configuration file will be published here: `app/config/packages/prologue/ale
 Since the main `AlertsMessageBag` class which powers the package is just an extension of Illuminate's `MessageBag` class we can leverage its functionality to easily add messages.
 
 ```php
-Alerts::add('error', 'Error message');
+Alert::add('error', 'Error message');
 ```
 
 ### Adding Alerts Through Alert Levels

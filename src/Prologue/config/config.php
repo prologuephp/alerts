@@ -36,4 +36,16 @@ return array(
 
 	'session_key' => 'alert_messages',
 
+	/*
+	|--------------------------------------------------------------------------
+	| Automatically Flash Alerts
+	|--------------------------------------------------------------------------
+	|
+	| You can optionally allow alerts to be flashed to the session
+	| automatically. Just set the following configuration option to "true".
+	|
+	*/
+
+	'auto_flash' => false,
+
 );

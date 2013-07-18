@@ -98,6 +98,29 @@ class AlertsMessageBag extends MessageBag {
 	}
 
 	/**
+	 * If set to true, automatically flash messages to the session.
+	 *
+	 * @return void
+	 */
+	protected function autoFlash()
+	{
+		if ($this->shouldAutoFlash())
+		{
+			$this->flash();
+		}
+	}
+
+	/**
+	 * Determines if set messages should be auto flashed.
+	 *
+	 * @return bool
+	 */
+	protected function shouldAutoFlash()
+	{
+		return $this->config->get('alerts::auto_flash') ? true : false;
+	}
+
+	/**
 	 * Returns the alert levels from the config.
 	 *
 	 * @return array
@@ -115,29 +138,6 @@ class AlertsMessageBag extends MessageBag {
 	protected function getSessionKey()
 	{
 		return $this->config->get('alerts::session_key');
-	}
-
-	/**
-	 * Determines if set messages should be auto flashed.
-	 *
-	 * @return bool
-	 */
-	protected function shouldAutoFlash()
-	{
-		return $this->config->get('alerts::auto_flash') ? true : false;
-	}
-
-	/**
-	 * If set to true, automatically flash messages to the session.
-	 *
-	 * @return void
-	 */
-	protected function autoFlash()
-	{
-		if ($this->shouldAutoFlash())
-		{
-			$this->flash();
-		}
 	}
 
 	/**

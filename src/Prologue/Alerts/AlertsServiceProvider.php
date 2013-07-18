@@ -11,7 +11,10 @@ class AlertsServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		$this->app['alerts'] = $this->app->share(function($app)
+		{
+			return new AlertsMessageBag($app['session']);
+		});
 	}
 
 	/**
@@ -21,7 +24,7 @@ class AlertsServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array();
+		return array('alerts');
 	}
 
 }

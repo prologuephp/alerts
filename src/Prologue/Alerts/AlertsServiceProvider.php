@@ -1,8 +1,8 @@
-<?php namespace Prologue\Alert;
+<?php namespace Prologue\Alerts;
 
 use Illuminate\Support\ServiceProvider;
 
-class AlertServiceProvider extends ServiceProvider {
+class AlertsServiceProvider extends ServiceProvider {
 
 	/**
 	 * Register the service provider.

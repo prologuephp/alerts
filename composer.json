@@ -1,5 +1,5 @@
 {
-    "name": "prologue/alert",
+    "name": "prologue/alerts",
     "description": "",
     "authors": [
         {
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Prologue\\Alert": "src/"
+            "Prologue\\Alerts": "src/"
         }
     },
     "minimum-stability": "dev"

@@ -64,7 +64,7 @@ The configuration file will be published here: `app/config/packages/prologue/ale
 
 ### Adding Alerts
 
-Since the main `AlertsMessageBag` class which powers the package is just an extension of Illuminate's `MessageBag` class we can leverage its functionality to easily add messages.
+Since the main `AlertsMessageBag` class which powers the package is an extension of Illuminate's `MessageBag` class we can leverage its functionality to easily add messages.
 
 ```php
 Alert::add('error', 'Error message');
@@ -72,7 +72,7 @@ Alert::add('error', 'Error message');
 
 ### Adding Alerts Through Alert Levels
 
-By default, the package has some alert levels defined in its configuration file. The default levels are `success`, `error`, `warning` and `info`. The `AlertsMessageBag` check if you call one of these levels as a function and registers your alert which you provided with the correct key.
+By default, the package has some alert levels defined in its configuration file. The default levels are `success`, `error`, `warning` and `info`. The `AlertsMessageBag` checks if you call one of these levels as a function and registers your alert which you provided with the correct key.
 
 This makes adding alerts for certain alert types very easy:
 

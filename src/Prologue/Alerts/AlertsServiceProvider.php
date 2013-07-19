@@ -12,7 +12,7 @@ class AlertsServiceProvider extends ServiceProvider {
 	public function register()
 	{
 		// Register config file.
-		$this->app['config']->package('prologue/alerts', __DIR__.'/../config');
+		$this->app['config']->package('prologue/alerts', __DIR__.'/../../config');
 
 		// Register the AlertsMessageBag class.
 		$this->app['alerts'] = $this->app->share(function($app)

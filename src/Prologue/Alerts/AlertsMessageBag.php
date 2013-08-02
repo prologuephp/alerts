@@ -43,46 +43,6 @@ class AlertsMessageBag extends MessageBag {
 		}
 
 		parent::__construct($messages);
-
-		if ($this->shouldAutoFlash())
-		{
-			$this->flash();
-		}
-	}
-
-	/**
-	 * Add a message to the bag.
-	 *
-	 * @param  string  $key
-	 * @param  string  $message
-	 * @return \Prologue\Alerts\AlertsMessageBag
-	 */
-	public function add($key, $message)
-	{
-		parent::add($key, $message);
-
-		// Check if the messages need to be flashed 
-		// to the session automatically.
-		$this->autoFlash();
-
-		return $this;
-	}
-
-	/**
-	 * Merge a new array of messages into the bag.
-	 *
-	 * @param  array  $messages
-	 * @return \Prologue\Alerts\AlertsMessageBag
-	 */
-	public function merge(array $messages)
-	{
-		parent::merge($messages);
-
-		// Check if the messages need to be flashed 
-		// to the session automatically.
-		$this->autoFlash();
-
-		return $this;
 	}
 
 	/**
@@ -95,29 +55,6 @@ class AlertsMessageBag extends MessageBag {
 		$this->session->flash($this->getSessionKey(), $this->messages);
 
 		return $this;
-	}
-
-	/**
-	 * If set to true, automatically flash messages to the session.
-	 *
-	 * @return void
-	 */
-	protected function autoFlash()
-	{
-		if ($this->shouldAutoFlash())
-		{
-			$this->flash();
-		}
-	}
-
-	/**
-	 * Determines if set messages should be auto flashed.
-	 *
-	 * @return bool
-	 */
-	protected function shouldAutoFlash()
-	{
-		return $this->config->get('alerts::auto_flash') ? true : false;
 	}
 
 	/**

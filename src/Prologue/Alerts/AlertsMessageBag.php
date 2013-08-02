@@ -1,5 +1,6 @@
 <?php namespace Prologue\Alerts;
 
+use BadMethodCallException;
 use Illuminate\Session\Store;
 use Illuminate\Config\Repository;
 use Illuminate\Support\MessageBag;
@@ -113,7 +114,7 @@ class AlertsMessageBag extends MessageBag {
 			return $this->add($method, $parameters[0]);
 		}
 
-		throw new \BadMethodCallException("Method [$method] does not exist.");
+		throw new BadMethodCallException("Method [$method] does not exist.");
 	}
 
 }

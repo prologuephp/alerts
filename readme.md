@@ -105,7 +105,7 @@ Remember that the `AlertsMessageBag` class is just an extension of Illuminate's 
 ```php
 @foreach (Alert::all() as $alert)
 	{{ $alert }}
-@endif
+@endforeach
 ```
 
 Or if you'd like to display a single alert for a certain alert level.

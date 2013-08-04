@@ -2,8 +2,8 @@
 
 use BadMethodCallException;
 use Illuminate\Session\Store;
+use Prologue\Support\MessageBag;
 use Illuminate\Config\Repository;
-use Illuminate\Support\MessageBag;
 
 class AlertsMessageBag extends MessageBag {
 

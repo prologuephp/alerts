@@ -23,7 +23,7 @@ class AlertsMessageBagTest extends PHPUnit_Framework_TestCase {
 		m::close();
 	}
 
-	public function mockAlertsMessageBag()
+	protected function mockDependencies()
 	{
 		$this->session = m::mock('Illuminate\Session\Store');
 		$this->session->shouldReceive('has')
@@ -33,6 +33,11 @@ class AlertsMessageBagTest extends PHPUnit_Framework_TestCase {
 		$this->config->shouldReceive('get')
 		             ->once()
 		             ->andReturn($this->sessionKey);
+	}
+
+	protected function mockAlertsMessageBag()
+	{
+		$this->mockDependencies();
 
 		return new AlertsMessageBag($this->session, $this->config);
 	}

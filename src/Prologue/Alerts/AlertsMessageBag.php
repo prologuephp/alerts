@@ -25,8 +25,9 @@ class AlertsMessageBag extends MessageBag {
 	 * Initialize the AlertMessageBag class.
 	 *
 	 * @param  \Illuminate\Session\Store  $session
+	 * @param  \Illuminate\Config\Repository $config
 	 * @param  array  $messages
-	 * @return void
+	 * @return \Prologue\Alerts\AlertsMessageBag
 	 */
 	public function __construct(Store $session, Repository $config, array $messages = array())
 	{
@@ -49,7 +50,7 @@ class AlertsMessageBag extends MessageBag {
 	/**
 	 * Store the messages in the current session.
 	 *
-	 * @return \Prologue\Alert\AlertMessageBag
+	 * @return \Prologue\Alerts\AlertsMessageBag
 	 */
 	public function flash()
 	{

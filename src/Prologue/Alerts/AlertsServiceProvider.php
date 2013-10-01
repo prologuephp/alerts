@@ -17,7 +17,7 @@ class AlertsServiceProvider extends ServiceProvider {
 		// Register the AlertsMessageBag class.
 		$this->app['alerts'] = $this->app->share(function($app)
 		{
-			return new AlertsMessageBag($app['session'], $app['config']);
+			return new AlertsMessageBag($app['session.store'], $app['config']);
 		});
 	}
 

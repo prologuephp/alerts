@@ -113,19 +113,19 @@ class AlertsMessageBag extends MessageBag {
 		if (in_array($method, $this->getLevels()))
 		{
 			// Array of alerts
-            if (is_array($parameters[0]))
-            {
-                foreach ($parameters[0] as $parameter)
-                {
-                    $this->add($method, $parameter);
-                }
-                return $this;
-            }
-            // Single alert
-            else
-            {
-                return $this->add($method, $parameters[0]);
-            }
+			if (is_array($parameters[0]))
+			{
+				foreach ($parameters[0] as $parameter)
+				{
+					$this->add($method, $parameter);
+				}
+				return $this;
+			}
+			// Single alert
+			else
+			{
+				return $this->add($method, $parameters[0]);
+			}
 		}
 
 		throw new BadMethodCallException("Method [$method] does not exist.");

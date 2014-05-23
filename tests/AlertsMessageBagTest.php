@@ -104,7 +104,7 @@ class AlertsMessageBagTest extends PHPUnit_Framework_TestCase {
 			->once()
 			->andReturn($this->levels);
 
-		$messages = ['foo', 'bar', 'baz'];
+		$messages = array('foo', 'bar', 'baz');
 
 		$bag->error($messages);
 

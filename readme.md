@@ -116,6 +116,16 @@ Or if you'd like to display a single alert for a certain alert level.
 @endif
 ```
 
+Display all messages for each alert level:
+
+```php
+@foreach (Alert::getMessages() as $type => $messages)
+    @foreach ($messages as $message)
+        <div class="alert alert-{{ $type }}">{{ $message }}</div>
+    @endforeach
+@endforeach
+```
+
 If you'd like to learn more ways on how you can display messages, please [take a closer look to Illuminate's `MessageBag` class](https://github.com/illuminate/support/blob/master/MessageBag.php).
 
 ## Changelog

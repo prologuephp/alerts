@@ -130,7 +130,7 @@ If you'd like to learn more ways on how you can display messages, please [take a
 
 ## Changelog
 
-You view the changelog for this package [here](https://github.com/Prologue/Alerts/blob/master/changelog.md).
+You view the changelog for this package [here](https://github.com/driesvints/Alerts/releases).
 
 ## License
 

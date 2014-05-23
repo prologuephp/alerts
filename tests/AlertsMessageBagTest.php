@@ -42,6 +42,17 @@ class AlertsMessageBagTest extends PHPUnit_Framework_TestCase {
 		return new AlertsMessageBag($this->session, $this->config);
 	}
 
+	public function testGetLevels()
+	{
+		$bag = $this->mockAlertsMessageBag();
+
+		$this->config->shouldReceive('get')
+			->once()
+			->andReturn($this->levels);
+
+		$this->assertEquals($this->levels, $bag->getLevels());
+	}
+
 	public function testAddByLevel()
 	{
 		$bag = $this->mockAlertsMessageBag();

@@ -105,23 +105,25 @@ class AlertsMessageBag extends MessageBag {
 	 * @param  string  $method
 	 * @param  array   $parameters
 	 * @return mixed
-	 * @throws BadMethodCallException
+	 * @throws \BadMethodCallException
 	 */
 	public function __call($method, $parameters)
 	{
 		// Check if the method is in the allowed alert levels array.
 		if (in_array($method, $this->getLevels()))
 		{
-			// Array of alerts
+			// Array of alerts.
 			if (is_array($parameters[0]))
 			{
 				foreach ($parameters[0] as $parameter)
 				{
 					$this->add($method, $parameter);
 				}
+
 				return $this;
 			}
-			// Single alert
+
+			// Single alert.
 			else
 			{
 				return $this->add($method, $parameters[0]);

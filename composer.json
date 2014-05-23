@@ -17,7 +17,8 @@
         "prologue/support": "1.0.x"
     },
     "require-dev": {
-        "mockery/mockery": "0.7.2"
+        "phpunit/phpunit": "4.1.*",
+        "mockery/mockery": "0.9.*"
     },
     "autoload": {
         "psr-0": {

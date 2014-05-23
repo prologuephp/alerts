@@ -96,4 +96,19 @@ class AlertsMessageBagTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(array('error' => array('foo')), $messages);
 	}
 
+	public function testAddMultipleMessagesToAlertLevel()
+	{
+		$bag = $this->mockAlertsMessageBag();
+
+		$this->config->shouldReceive('get')
+			->once()
+			->andReturn($this->levels);
+
+		$messages = ['foo', 'bar', 'baz'];
+
+		$bag->error($messages);
+
+		$this->assertEquals($messages, $bag->get('error'));
+	}
+
 }

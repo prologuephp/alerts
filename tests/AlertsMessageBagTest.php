@@ -1,6 +1,7 @@
 <?php
 namespace Prologue\Alerts\Tests;
 
+use Illuminate\Support\MessageBag;
 use Mockery as m;
 use Prologue\Alerts\AlertsMessageBag;
 
@@ -105,5 +106,25 @@ class AlertsMessageBagTest extends \PHPUnit_Framework_TestCase
         $bag->error($messages);
 
         $this->assertEquals($messages, $bag->get('error'));
+    }
+
+    public function testAddArray()
+    {
+        $bag = $this->mockAlertsMessageBag();
+        $bag->add('error', ['foo' => 'bar']);
+
+        $messages = $bag->get('error');
+
+        $this->assertSame(['foo' => 'bar'], $messages[0]);
+    }
+
+    public function testAddMessageBag()
+    {
+        $bag = $this->mockAlertsMessageBag();
+        $bag->add('error', new MessageBag);
+
+        $messages = $bag->get('error');
+
+        $this->assertInstanceOf('Illuminate\Support\MessageBag', $messages[0]);
     }
 }

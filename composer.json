@@ -15,8 +15,7 @@
         "php": ">=5.4.0",
         "illuminate/config": "~4",
         "illuminate/session": "~4",
-        "illuminate/support": "~4",
-        "prologue/support": "1.0.*"
+        "illuminate/support": "~4"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.1",

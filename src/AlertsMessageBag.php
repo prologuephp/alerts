@@ -3,7 +3,7 @@ namespace Prologue\Alerts;
 
 use BadMethodCallException;
 use Illuminate\Session\Store;
-use Prologue\Support\MessageBag;
+use Illuminate\Support\MessageBag;
 use Illuminate\Config\Repository;
 
 class AlertsMessageBag extends MessageBag
@@ -39,6 +39,38 @@ class AlertsMessageBag extends MessageBag
         }
 
         parent::__construct($messages);
+    }
+
+    /**
+     * Format an array of messages.
+     *
+     * @param array $messages
+     * @param string $format
+     * @param string $messageKey
+     * @return array
+     */
+    protected function transform($messages, $format, $messageKey)
+    {
+        $messages = (array) $messages;
+
+        // We will simply spin through the given messages and transform each one
+        // replacing the :message place holder with the real message allowing
+        // the messages to be easily formatted to each developer's desires.
+        foreach ($messages as $key => &$message) {
+            $replace = [':message', ':key'];
+
+            if ($message instanceof MessageBag) {
+                // Do nothing.
+            } elseif (is_array($message)) {
+                foreach ($message as $k => &$m) {
+                    $m = str_replace($replace, [$m, $messageKey], $format);
+                }
+            } else {
+                $message = str_replace($replace, [$message, $messageKey], $format);
+            }
+        }
+
+        return $messages;
     }
 
     /**

@@ -4,123 +4,106 @@ namespace Prologue\Alerts\Tests;
 use Mockery as m;
 use Prologue\Alerts\AlertsMessageBag;
 
-class AlertsMessageBagTest extends \PHPUnit_Framework_TestCase {
+class AlertsMessageBagTest extends \PHPUnit_Framework_TestCase
+{
+    public $session;
 
-	public $session;
+    public $config;
 
-	public $config;
+    public $levels = [
+        'info',
+        'warning',
+        'error',
+        'success',
+    ];
 
-	public $levels = array(
-		'info',
-		'warning',
-		'error',
-		'success',
-	);
+    public $sessionKey = 'alert_messages';
 
-	public $sessionKey = 'alert_messages';
+    public function tearDown()
+    {
+        m::close();
+    }
 
-	public function tearDown()
-	{
-		m::close();
-	}
+    protected function mockDependencies()
+    {
+        $this->session = m::mock('Illuminate\Session\Store');
+        $this->session->shouldReceive('has')->once()->andReturn(false);
 
-	protected function mockDependencies()
-	{
-		$this->session = m::mock('Illuminate\Session\Store');
-		$this->session->shouldReceive('has')
-		              ->once()
-		              ->andReturn(false);
-		$this->config = m::mock('Illuminate\Config\Repository');
-		$this->config->shouldReceive('get')
-		             ->once()
-		             ->andReturn($this->sessionKey);
-	}
+        $this->config = m::mock('Illuminate\Config\Repository');
+        $this->config->shouldReceive('get')->once()->andReturn($this->sessionKey);
+    }
 
-	protected function mockAlertsMessageBag()
-	{
-		$this->mockDependencies();
+    protected function mockAlertsMessageBag()
+    {
+        $this->mockDependencies();
 
-		return new AlertsMessageBag($this->session, $this->config);
-	}
+        return new AlertsMessageBag($this->session, $this->config);
+    }
 
-	public function testGetLevels()
-	{
-		$bag = $this->mockAlertsMessageBag();
+    public function testGetLevels()
+    {
+        $bag = $this->mockAlertsMessageBag();
 
-		$this->config->shouldReceive('get')
-			->once()
-			->andReturn($this->levels);
+        $this->config->shouldReceive('get')->once()->andReturn($this->levels);
 
-		$this->assertEquals($this->levels, $bag->getLevels());
-	}
+        $this->assertEquals($this->levels, $bag->getLevels());
+    }
 
-	public function testAddByLevel()
-	{
-		$bag = $this->mockAlertsMessageBag();
+    public function testAddByLevel()
+    {
+        $bag = $this->mockAlertsMessageBag();
 
-		$this->config->shouldReceive('get')
-		             ->once()
-		             ->andReturn($this->levels);
+        $this->config->shouldReceive('get')->once()->andReturn($this->levels);
 
-		$bag->error('foo');
+        $bag->error('foo');
 
-		$messages = $bag->get('error');
+        $messages = $bag->get('error');
 
-		$this->assertEquals(array('foo'), $messages);
-	}
+        $this->assertEquals(['foo'], $messages);
+    }
 
-	/**
-	 * @expectedException BadMethodCallException
-	 */
-	public function testIncorrectLevel()
-	{
-		$bag = $this->mockAlertsMessageBag();
+    /**
+     * @expectedException BadMethodCallException
+     */
+    public function testIncorrectLevel()
+    {
+        $bag = $this->mockAlertsMessageBag();
 
-		$this->config->shouldReceive('get')
-		             ->once()
-		             ->andReturn($this->levels);
+        $this->config->shouldReceive('get')->once()->andReturn($this->levels);
 
-		$bag->debug('foo');
-	}
+        $bag->debug('foo');
+    }
 
-	public function testFlashMessages()
-	{
-		$bag = $this->mockAlertsMessageBag();
+    public function testFlashMessages()
+    {
+        $bag = $this->mockAlertsMessageBag();
 
-		$bag->add('error', 'foo');
+        $bag->add('error', 'foo');
 
-		$this->session->shouldReceive('flash')
-		              ->once();
-		$this->config->shouldReceive('get')
-		             ->once()
-		             ->andReturn($this->sessionKey);
+        $this->session->shouldReceive('flash')->once();
+        $this->config->shouldReceive('get')->once()->andReturn($this->sessionKey);
 
-		$bag->flash();
+        $bag->flash();
 
-		$bagSession = $bag->getSession();
+        $bagSession = $bag->getSession();
 
-		$this->session->shouldReceive('get')
-		              ->once()
-		              ->andReturn(array('error' => array('foo')));
+        $this->session->shouldReceive('get')->once()->andReturn(['error' => ['foo']]);
 
-		$messages = $bagSession->get($this->sessionKey);
+        $messages = $bagSession->get($this->sessionKey);
 
-		$this->assertEquals(array('error' => array('foo')), $messages);
-	}
+        $this->assertEquals(['error' => ['foo']], $messages);
+    }
 
-	public function testAddMultipleMessagesToAlertLevel()
-	{
-		$bag = $this->mockAlertsMessageBag();
+    public function testAddMultipleMessagesToAlertLevel()
+    {
+        $bag = $this->mockAlertsMessageBag();
 
-		$this->config->shouldReceive('get')
-			->once()
-			->andReturn($this->levels);
+        $this->config->shouldReceive('get')->once()->andReturn($this->levels);
 
-		$messages = array('foo', 'bar', 'baz');
+        $messages = ['foo', 'bar', 'baz'];
 
-		$bag->error($messages);
+        $bag->error($messages);
 
-		$this->assertEquals($messages, $bag->get('error'));
-	}
-
+        $this->assertEquals($messages, $bag->get('error'));
+    }
 }

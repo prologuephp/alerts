@@ -24,16 +24,8 @@ Maintained by [Dries Vints](https://github.com/driesvints)
 
 You can install the package for your Laravel 4 project through Composer.
 
-Require the package in your `composer.json`.
-
-```
-"prologue/alerts": "dev-master"
-```
-
-Run composer to install or update the package.
-
 ```bash
-$ composer update
+$ composer require prologue/alerts
 ```
 
 Register the service provider in `app/config/app.php`.

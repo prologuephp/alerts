@@ -13,10 +13,10 @@ Maintained by [Dries Vints](https://github.com/driesvints)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-	- [Adding Alerts](#adding-alerts)
-	- [Adding Alerts Through Alert Levels](#adding-alerts-through-alert-levels)
-	- [Flashing Alerts To The Session](#flashing-alerts-to-the-session)
-	- [Displaying Alerts](#displaying-alerts)
+    - [Adding Alerts](#adding-alerts)
+    - [Adding Alerts Through Alert Levels](#adding-alerts-through-alert-levels)
+    - [Flashing Alerts To The Session](#flashing-alerts-to-the-session)
+    - [Displaying Alerts](#displaying-alerts)
 - [Changelog](#changelog)
 - [License](#license)
 
@@ -104,7 +104,7 @@ Remember that the `AlertsMessageBag` class is just an extension of Illuminate's 
 
 ```php
 @foreach (Alert::all() as $alert)
-	{{ $alert }}
+    {{ $alert }}
 @endforeach
 ```
 
@@ -112,7 +112,7 @@ Or if you'd like to display a single alert for a certain alert level.
 
 ```php
 @if (Alert::has('success'))
-	{{ Alert::first('success') }}
+    {{ Alert::first('success') }}
 @endif
 ```
 

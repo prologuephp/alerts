@@ -1,9 +1,10 @@
 <?php
+namespace Prologue\Alerts\Tests;
 
 use Mockery as m;
 use Prologue\Alerts\AlertsMessageBag;
 
-class AlertsMessageBagTest extends PHPUnit_Framework_TestCase {
+class AlertsMessageBagTest extends \PHPUnit_Framework_TestCase {
 
 	public $session;
 

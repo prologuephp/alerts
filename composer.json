@@ -21,8 +21,13 @@
         "mockery/mockery": "0.9.*"
     },
     "autoload": {
-        "psr-0": {
-            "Prologue\\Alerts": "src/"
+        "psr-4": {
+            "Prologue\\Alerts\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Prologue\\Alerts\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev"

@@ -2,6 +2,12 @@
 
 All notable changes to Prologue Alerts will be documented in this file. This file follows the *[Keep a CHANGELOG](http://keepachangelog.com/)* standards.
 
+## [0.4.0-beta.3] - 2015-03-29
+
+### Fixed
+
+- Moved publishes and merge config calls to correct locations
+
 ## [0.4.0-beta.2] - 2015-03-29
 
 ### Fixed

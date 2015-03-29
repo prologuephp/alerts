@@ -2,9 +2,9 @@
 namespace Prologue\Alerts;
 
 use BadMethodCallException;
-use Illuminate\Session\Store;
+use Illuminate\Session\Store as Session;
 use Illuminate\Support\MessageBag;
-use Illuminate\Config\Repository;
+use Illuminate\Config\Repository as Config;
 
 class AlertsMessageBag extends MessageBag
 {
@@ -24,7 +24,7 @@ class AlertsMessageBag extends MessageBag
      * @param array $messages
      * @return \Prologue\Alerts\AlertsMessageBag
      */
-    public function __construct(Store $session, Repository $config, array $messages = [])
+    public function __construct(Session $session, Config $config, array $messages = [])
     {
         $this->config = $config;
         $this->session = $session;
@@ -92,7 +92,7 @@ class AlertsMessageBag extends MessageBag
      */
     public function getLevels()
     {
-        return (array) $this->config->get('alerts::levels');
+        return (array) $this->config->get('prologue.alerts.levels');
     }
 
     /**
@@ -102,7 +102,7 @@ class AlertsMessageBag extends MessageBag
      */
     protected function getSessionKey()
     {
-        return $this->config->get('alerts::session_key');
+        return $this->config->get('prologue.alerts.session_key');
     }
 
     /**

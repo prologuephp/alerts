@@ -7,13 +7,16 @@ class AlertsServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->registerConfig();
+        $this->publishConfig();
         $this->registerAlertsMessageBagClass();
     }
 
-    private function registerConfig()
+    private function publishConfig()
     {
-        $this->app['config']->package('prologue/alerts', __DIR__ . '/../../config');
+        $configPath = __DIR__ . '/config/config.php';
+
+        $this->publishes([$configPath => config_path('prologue/alerts.php')]);
+        $this->mergeConfigFrom($configPath, 'prologue.alerts');
     }
 
     private function registerAlertsMessageBagClass()

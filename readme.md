@@ -1,6 +1,6 @@
-# Prologue Alerts
+# Alerts for Laravel 5
 
-Prologue Alerts is a package that handles global site messages.
+Alerts is a package that handles global site messages in Laravel 5.
 
 I first got the idea for creating this package after [a blog post](http://toddish.co.uk/blog/global-site-messages-in-laravel-4/) I read by [Todd Francis](http://toddish.co.uk/). This package uses much of the concepts of his blog post as well as the concept of alert levels which [Illuminate's Log package](https://github.com/illuminate/log) uses.
 
@@ -22,7 +22,7 @@ Maintained by [Dries Vints](https://github.com/driesvints)
 
 ## Installation
 
-You can install the package for your Laravel 4 project through Composer.
+You can install the package for your Laravel 5 project through Composer.
 
 ```bash
 $ composer require prologue/alerts
@@ -47,10 +47,10 @@ The packages provides you with some configuration options.
 To create the configuration file run this command in your command line app:
 
 ```bash
-$ php artisan config:publish prologue/alerts
+$ php artisan vendor:publish --provider="Prologue\Alerts\AlertsServiceProvider"
 ```
 
-The configuration file will be published here: `app/config/packages/prologue/alerts/config.php`.
+The configuration file will be published here: `config/prologue/alerts.php`.
 
 ## Usage
 

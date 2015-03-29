@@ -5,6 +5,11 @@ use Illuminate\Support\ServiceProvider;
 
 class AlertsServiceProvider extends ServiceProvider
 {
+    public function boot()
+    {
+        $this->mergeConfigFrom(__DIR__ . '/config/config.php', 'prologue.alerts');
+    }
+
     public function register()
     {
         $this->publishConfig();
@@ -13,10 +18,7 @@ class AlertsServiceProvider extends ServiceProvider
 
     private function publishConfig()
     {
-        $configPath = __DIR__ . '/config/config.php';
-
-        $this->publishes([$configPath => config_path('prologue/alerts.php')]);
-        $this->mergeConfigFrom($configPath, 'prologue.alerts');
+        $this->publishes([__DIR__ . '/config/config.php' => config_path('prologue/alerts.php')]);
     }
 
     private function registerAlertsMessageBagClass()

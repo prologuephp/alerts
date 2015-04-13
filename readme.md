@@ -1,5 +1,11 @@
 # Alerts for Laravel 5
 
+[![Build Status](https://img.shields.io/travis/prologuephp/alerts/master.svg?style=flat-square)](https://travis-ci.org/prologuephp/alerts)
+[![Quality Score](https://img.shields.io/scrutinizer/g/prologuephp/alerts.svg?style=flat-square)](https://scrutinizer-ci.com/g/prologuephp/alerts)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](license.md)
+[![Packagist Version](https://img.shields.io/packagist/v/prologue/alerts.svg?style=flat-square)](https://packagist.org/packages/prologue/alerts)
+[![Total Downloads](https://img.shields.io/packagist/dt/prologue/lock.svg?style=flat-square)](https://packagist.org/packages/prologue/alerts)
+
 Alerts is a package that handles global site messages in Laravel 5.
 
 I first got the idea for creating this package after [a blog post](http://toddish.co.uk/blog/global-site-messages-in-laravel-4/) I read by [Todd Francis](http://toddish.co.uk/). This package uses much of the concepts of his blog post as well as the concept of alert levels which [Illuminate's Log package](https://github.com/illuminate/log) uses.

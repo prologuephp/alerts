@@ -2,6 +2,14 @@
 
 All notable changes to Prologue Alerts will be documented in this file. This file follows the *[Keep a CHANGELOG](http://keepachangelog.com/)* standards.
 
+
+## [0.4.1] - 2017-01-24
+
+### Added
+
+- Laravel 5.4 support
+
+
 ## [0.4.0-beta.3] - 2015-03-29
 
 ### Fixed

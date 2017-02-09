@@ -10,9 +10,7 @@ Alerts is a package that handles global site messages in Laravel 5.
 
 I first got the idea for creating this package after [a blog post](http://toddish.co.uk/blog/global-site-messages-in-laravel-4/) I read by [Todd Francis](http://toddish.co.uk/). This package uses much of the concepts of his blog post as well as the concept of alert levels which [Illuminate's Log package](https://github.com/illuminate/log) uses.
 
-Maintained by [Dries Vints](https://github.com/driesvints)  
-[@driesvints](https://twitter.com/driesvints)  
-[driesvints.com](http://driesvints.com)  
+Maintained by [Cristian Tabacitu](tabacitu)
 
 ## Table of Contents
 

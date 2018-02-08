@@ -31,5 +31,15 @@
             "Prologue\\Alerts\\Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Prologue\\Alerts\\AlertsServiceProvider"
+            ],
+            "aliases": {
+                "Alert": "Prologue\\Alerts\\Facades\\Alert"
+            }
+        }
+    }
 }

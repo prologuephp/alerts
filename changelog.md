@@ -3,6 +3,14 @@
 All notable changes to Prologue Alerts will be documented in this file. This file follows the *[Keep a CHANGELOG](http://keepachangelog.com/)* standards.
 
 
+## [0.4.2] - 2018-02-12
+
+### Added
+
+- flush() method;
+- Laravel package auto-discovery;
+
+
 ## [0.4.1] - 2017-01-24
 
 ### Added

@@ -10,7 +10,7 @@ Alerts is a package that handles global site messages in Laravel 5.
 
 I first got the idea for creating this package after [a blog post](http://toddish.co.uk/blog/global-site-messages-in-laravel-4/) I read by [Todd Francis](http://toddish.co.uk/). This package uses much of the concepts of his blog post as well as the concept of alert levels which [Illuminate's Log package](https://github.com/illuminate/log) uses.
 
-Maintained by [Cristian Tabacitu](tabacitu)
+Maintained by [Cristian Tabacitu](tabacitu) thanks to its use in [Backpack for Laravel](http://backpackforlaravel.com/) (the most popular admin panel for Laravel).
 
 ## Table of Contents
 
@@ -32,7 +32,7 @@ You can install the package for your Laravel 5 project through Composer.
 $ composer require prologue/alerts
 ```
 
-Register the service provider in `app/config/app.php`.
+For Laravel 5.4 and below, register the service provider in `app/config/app.php`.
 
 ```php
 'Prologue\Alerts\AlertsServiceProvider',

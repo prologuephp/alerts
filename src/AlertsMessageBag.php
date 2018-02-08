@@ -86,6 +86,22 @@ class AlertsMessageBag extends MessageBag
     }
 
     /**
+     * Deletes all messages.
+     *
+     * @return \Prologue\Alerts\AlertsMessageBag
+     */
+    public function flush($withSession = true)
+    {
+        $this->messages = [];
+        
+        if($withSession) {
+            $this->session->forget($this->getSessionKey());
+        }
+
+        return $this;
+    }
+
+    /**
      * Returns the alert levels from the config.
      *
      * @return array

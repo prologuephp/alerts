@@ -142,6 +142,18 @@ class AlertsMessageBag extends MessageBag
     }
 
     /**
+     * Deletes all messages.
+     *
+     * @return \Prologue\Alerts\AlertsMessageBag
+     */
+    public function flush()
+    {
+        $this->messages = [];
+        
+        return $this;
+    }
+
+    /**
      * Dynamically handle alert additions.
      *
      * @param string $method

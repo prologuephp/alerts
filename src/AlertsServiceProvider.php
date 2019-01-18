@@ -1,4 +1,5 @@
 <?php
+
 namespace Prologue\Alerts;
 
 use Illuminate\Support\ServiceProvider;

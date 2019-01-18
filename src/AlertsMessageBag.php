@@ -88,6 +88,8 @@ class AlertsMessageBag extends MessageBag
     /**
      * Deletes all messages.
      *
+     * @param bool $withSession
+     *
      * @return \Prologue\Alerts\AlertsMessageBag
      */
     public function flush($withSession = true)

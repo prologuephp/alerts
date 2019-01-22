@@ -3,6 +3,17 @@
 All notable changes to Prologue Alerts will be documented in this file. This file follows the *[Keep a CHANGELOG](http://keepachangelog.com/)* standards.
 
 
+## [0.4.3] - 2019-01-22
+
+### Added
+
+- docblocks;
+- php 7.3 to Travis CI;
+
+### Removed
+- HHVM from Travis CI;
+
+
 ## [0.4.2] - 2018-02-12
 
 ### Added

@@ -1,4 +1,4 @@
-# Alerts for Laravel 5
+# Alerts for Laravel 6 & 5
 
 [![Build Status](https://img.shields.io/travis/prologuephp/alerts/master.svg?style=flat-square)](https://travis-ci.org/prologuephp/alerts)
 [![Quality Score](https://img.shields.io/scrutinizer/g/prologuephp/alerts.svg?style=flat-square)](https://scrutinizer-ci.com/g/prologuephp/alerts)
@@ -26,7 +26,7 @@ Maintained by [Cristian Tabacitu](tabacitu) thanks to its use in [Backpack for L
 
 ## Installation
 
-You can install the package for your Laravel 5 project through Composer.
+You can install the package for your Laravel 5/6 project through Composer.
 
 ```bash
 $ composer require prologue/alerts

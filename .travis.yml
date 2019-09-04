@@ -4,8 +4,6 @@ php:
   - 5.6
   - 7.2
   - 7.3
-  - 7.4
-  - 8.0
   - nightly
 
 before_script:
@@ -16,8 +14,5 @@ script: phpunit
 
 matrix:
   allowed_failures:
-    - php: nightly
     - php: 7.3
-    - php: 7.4
-    - php: 8.0
     - php: nightly

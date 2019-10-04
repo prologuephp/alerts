@@ -48,7 +48,7 @@ Add the alias to the list of aliases in `app/config/app.php`.
 
 The packages provides you with some configuration options.
 
-To create the configuration file run this command in your command line app:
+To create the configuration file, run this command in your command line app:
 
 ```bash
 $ php artisan vendor:publish --provider="Prologue\Alerts\AlertsServiceProvider"
@@ -60,7 +60,7 @@ The configuration file will be published here: `config/prologue/alerts.php`.
 
 ### Adding Alerts
 
-Since the main `AlertsMessageBag` class which powers the package is an extension of Illuminate's `MessageBag` class we can leverage its functionality to easily add messages.
+Since the main `AlertsMessageBag` class which powers the package is an extension of Illuminate's `MessageBag` class, we can leverage its functionality to easily add messages.
 
 ```php
 Alert::add('error', 'Error message');
@@ -81,7 +81,7 @@ You can of course add your own alert levels by adding them to your own config fi
 
 ### Flashing Alerts To The Session
 
-At some times you want to remember alerts when you're, for example, redirecting to another route. This can be done by calling the `flash` method. The `AlertsMessageBag` class will put the current set alerts into the current session which can then be used after the redirect.
+Sometimes you want to remember alerts when you're, for example, redirecting to another route. This can be done by calling the `flash` method. The `AlertsMessageBag` class will put the current set alerts into the current session which can then be used after the redirect.
 
 ```php
 // Add some alerts and flash them to the session.

@@ -21,5 +21,4 @@ script: phpunit
 matrix:
   allowed_failures:
     - php: nightly
-    - php: 7.3
     - php: 8.0

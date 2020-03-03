@@ -3,6 +3,12 @@
 All notable changes to Prologue Alerts will be documented in this file. This file follows the *[Keep a CHANGELOG](http://keepachangelog.com/)* standards.
 
 
+## [0.4.6] - 2020-03-03
+
+### Added
+
+- support for Laravel 7;
+
 
 ## [0.4.5] - 2019-09-04
 

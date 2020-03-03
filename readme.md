@@ -1,4 +1,4 @@
-# Alerts for Laravel 6
+# Alerts for Laravel 5, 6 and 7
 
 [![Build Status](https://img.shields.io/travis/prologuephp/alerts/master.svg?style=flat-square)](https://travis-ci.org/prologuephp/alerts)
 [![Quality Score](https://img.shields.io/scrutinizer/g/prologuephp/alerts.svg?style=flat-square)](https://scrutinizer-ci.com/g/prologuephp/alerts)

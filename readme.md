@@ -6,7 +6,7 @@
 [![Packagist Version](https://img.shields.io/packagist/v/prologue/alerts.svg?style=flat-square)](https://packagist.org/packages/prologue/alerts)
 [![Total Downloads](https://img.shields.io/packagist/dt/prologue/lock.svg?style=flat-square)](https://packagist.org/packages/prologue/alerts)
 
-Global site messages in Laravel 6. Helps trigger notification bubbles with a simple API, both in the current page, and in the next page (using flash data).
+Global site messages in Laravel 7, 6 and 5. Helps trigger notification bubbles with a simple API, both in the current page, and in the next page (using flash data).
 
 Created by [Dries Vints](https://github.com/driesvints) - he first got the idea after [a blog post](http://toddish.co.uk/blog/global-site-messages-in-laravel-4/) by [Todd Francis](http://toddish.co.uk/). This package uses much of the concepts of his blog post as well as the concept of alert levels which [Illuminate's Log package](https://github.com/illuminate/log) uses. Maintained by [Cristian Tabacitu](tabacitu) thanks to its use in [Backpack for Laravel](http://backpackforlaravel.com/).
 

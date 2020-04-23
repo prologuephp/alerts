@@ -95,12 +95,59 @@ class AlertsMessageBag extends MessageBag
     public function flush($withSession = true)
     {
         $this->messages = [];
-        
+
         if($withSession) {
             $this->session->forget($this->getSessionKey());
         }
 
         return $this;
+    }
+
+    /**
+     * Checks to see if any messages exist.
+     *
+     * @param null $key A specific level you wish to check for.
+     *
+     * @return bool
+     */
+    public function has($level = null)
+    {
+        $alerts = $this->session->get($this->getSessionKey());
+        if(is_null($level) && isset($alerts)) {
+            return true;
+        } else {
+            if(isset($alerts[$level])) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Get the number of messages in the message bag.
+     *
+     * @param null $level A specific level name you wish to count.
+     *
+     * @return int
+     */
+    public function count($level = null)
+    {
+        $alerts = $this->session->get($this->getSessionKey());
+
+        if(is_null($level) && isset($alerts)) {
+            $totalCount = 0;
+            foreach($alerts as $level => $messages) {
+                $totalCount = $totalCount + count($alerts[$level], COUNT_RECURSIVE);
+            }
+            return $totalCount;
+        } else {
+            if(isset($alerts[$level])) {
+                return count($alerts[$level], COUNT_RECURSIVE);
+            }
+        }
+
+        return 0;
     }
 
     /**

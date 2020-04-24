@@ -120,6 +120,21 @@ Display all messages for each alert level:
 @endforeach
 ```
 
+Doing something if there are any messages:
+
+```php
+@if (Alert::count())
+    show this
+@endif
+```
+
+Checking or showing the error count:
+```php
+@if (Alert::count('error'))
+    There are {{ Alert::count('error') }} errors.
+@endif
+```
+
 If you'd like to learn more ways on how you can display messages, please [take a closer look to Illuminate's `MessageBag` class](https://github.com/illuminate/support/blob/master/MessageBag.php).
 
 ## Changelog

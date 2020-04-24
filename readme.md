@@ -120,6 +120,24 @@ Display all messages for each alert level:
 @endforeach
 ```
 
+### Checking For Alerts
+
+Sometimes it can be important to see if alert's do exist, such as only load javascript/styles if they are there are some (helps for better performance).
+
+You can check if there are any errors.
+
+```php
+Alert::has(); // Will check for any alerts
+Alert::has('errors'); // Will check for any alerts listed as errors.
+```
+
+You can also get the current number of alerts.
+
+```php
+Alert::count(); // Will give you a total count of all alerts based on all levels within your alerts config.
+Alert::count('errors'); // Will tell you only the amount of errors and exclude any levels.
+```
+
 If you'd like to learn more ways on how you can display messages, please [take a closer look to Illuminate's `MessageBag` class](https://github.com/illuminate/support/blob/master/MessageBag.php).
 
 ## Changelog

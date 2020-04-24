@@ -8,7 +8,7 @@
 
 Global site messages in Laravel 7, 6 and 5. Helps trigger notification bubbles with a simple API, both in the current page, and in the next page (using flash data).
 
-Created by [Dries Vints](https://github.com/driesvints) - he first got the idea after [a blog post](http://toddish.co.uk/blog/global-site-messages-in-laravel-4/) by [Todd Francis](http://toddish.co.uk/). This package uses much of the concepts of his blog post as well as the concept of alert levels which [Illuminate's Log package](https://github.com/illuminate/log) uses. Maintained by [Cristian Tabacitu](tabacitu) thanks to its use in [Backpack for Laravel](http://backpackforlaravel.com/).
+Created by [Dries Vints](https://github.com/driesvints) - he first got the idea after [a blog post](http://toddish.co.uk/blog/global-site-messages-in-laravel-4/) by [Todd Francis](http://toddish.co.uk/). This package uses much of the concepts of his blog post as well as the concept of alert levels which [Illuminate's Log package](https://github.com/illuminate/log) uses. Maintained by [Cristian Tabacitu](https://github.com/tabacitu) thanks to its use in [Backpack for Laravel](http://backpackforlaravel.com/).
 
 ## Table of Contents
 
@@ -128,14 +128,14 @@ You can check if there are any errors.
 
 ```php
 Alert::has(); // Will check for any alerts
-Alert::has('errors'); // Will check for any alerts listed as errors.
+Alert::has('error'); // Will check for any alerts listed as errors.
 ```
 
 You can also get the current number of alerts.
 
 ```php
 Alert::count(); // Will give you a total count of all alerts based on all levels within your alerts config.
-Alert::count('errors'); // Will tell you only the amount of errors and exclude any levels.
+Alert::count('error'); // Will tell you only the amount of errors and exclude any levels.
 ```
 
 If you'd like to learn more ways on how you can display messages, please [take a closer look to Illuminate's `MessageBag` class](https://github.com/illuminate/support/blob/master/MessageBag.php).

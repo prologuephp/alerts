@@ -3,6 +3,15 @@
 All notable changes to Prologue Alerts will be documented in this file. This file follows the *[Keep a CHANGELOG](http://keepachangelog.com/)* standards.
 
 
+## [0.4.7] - 2020-04-24
+
+### Added
+
+- ```Alert::count()``` in #31;
+- ```Alert::count('error')``` in #31;
+- ```Alert::has()``` in #31;
+
+
 ## [0.4.6] - 2020-03-03
 
 ### Added

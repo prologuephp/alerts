@@ -4,7 +4,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/prologuephp/alerts.svg?style=flat-square)](https://scrutinizer-ci.com/g/prologuephp/alerts)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](license.md)
 [![Packagist Version](https://img.shields.io/packagist/v/prologue/alerts.svg?style=flat-square)](https://packagist.org/packages/prologue/alerts)
-[![Total Downloads](https://img.shields.io/packagist/dt/prologue/lock.svg?style=flat-square)](https://packagist.org/packages/prologue/alerts)
+[![Total Downloads](https://img.shields.io/packagist/dt/prologue/alerts.svg?style=flat-square)](https://packagist.org/packages/prologue/alerts)
 
 Global site messages in Laravel 7, 6 and 5. Helps trigger notification bubbles with a simple API, both in the current page, and in the next page (using flash data).
 

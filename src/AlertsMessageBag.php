@@ -131,7 +131,7 @@ class AlertsMessageBag extends MessageBag
      *
      * @return int
      */
-    public function count($level = null)
+    public function count($level = null): int
     {
         $alerts = $this->session->get($this->getSessionKey());
 

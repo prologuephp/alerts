@@ -18,13 +18,13 @@
         }
     ],
     "require": {
-        "illuminate/config": "~9",
-        "illuminate/session": "~9",
-        "illuminate/support": "~9"
+        "illuminate/config": "~9|^10",
+        "illuminate/session": "~9|^10",
+        "illuminate/support": "~9|^10"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.1",
-        "mockery/mockery": "~0.9"
+        "phpunit/phpunit": "^9",
+        "mockery/mockery": "^1.0"
     },
     "autoload": {
         "psr-4": {

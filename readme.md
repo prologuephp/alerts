@@ -1,11 +1,10 @@
-# Alerts for Laravel 5, 6, 7, 8 and 9
+# Alerts for Laravel (v5 to v10)
 
-[![Build Status](https://img.shields.io/travis/prologuephp/alerts/master.svg?style=flat-square)](https://travis-ci.org/prologuephp/alerts)
+[![Total Downloads](https://img.shields.io/packagist/dt/prologue/alerts.svg?style=flat-square)](https://packagist.org/packages/prologue/alerts)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](license.md)
 [![Packagist Version](https://img.shields.io/packagist/v/prologue/alerts.svg?style=flat-square)](https://packagist.org/packages/prologue/alerts)
-[![Total Downloads](https://img.shields.io/packagist/dt/prologue/alerts.svg?style=flat-square)](https://packagist.org/packages/prologue/alerts)
 
-Global site messages in Laravel 9 - 5. Helps trigger notification bubbles with a simple API, both in the current page, and in the next page (using flash data).
+Global site messages in Laravel. Helps trigger notification bubbles with a simple API, both in the current page, and in the next page (using flash data).
 
 ## Table of Contents
 
@@ -21,7 +20,7 @@ Global site messages in Laravel 9 - 5. Helps trigger notification bubbles with a
 
 ## Installation
 
-You can install the package for your Laravel 6 project through Composer.
+You can install the package for your Laravel 6+ project through Composer.
 
 ```bash
 $ composer require prologue/alerts

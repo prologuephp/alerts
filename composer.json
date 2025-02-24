@@ -22,9 +22,9 @@
         }
     ],
     "require": {
-        "illuminate/config": "~9|^10|^11.0",
-        "illuminate/session": "~9|^10|^11.0",
-        "illuminate/support": "~9|^10|^11.0"
+        "illuminate/config": "~9|^10|^11.0|^12.0",
+        "illuminate/session": "~9|^10|^11.0|^12.0",
+        "illuminate/support": "~9|^10|^11.0|^12.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9|^10.5",

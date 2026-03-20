@@ -1,4 +1,4 @@
-# Alerts for Laravel (v5 to v11)
+# Alerts for Laravel (v5 to v12)
 
 [![Total Downloads](https://img.shields.io/packagist/dt/prologue/alerts.svg?style=flat-square)](https://packagist.org/packages/prologue/alerts)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](license.md)
